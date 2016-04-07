@@ -18,10 +18,13 @@ class Ship():
 
 		# Store a decimal value for the ship's center.
 		self.center = float(self.rect.centerx)
+		# self.bottom = float(self.rect.bottom)
 
 		# Movent flag
 		self.moving_right = False
 		self.moving_left = False
+		# self.moving_up = False
+		# self.moving_down = False
 
 	def update(self):
 		"""Update the ship's position based on the movement flag."""
@@ -30,6 +33,10 @@ class Ship():
 			self.center += self.ai_settings.ship_speed_factor
 		elif self.moving_left and self.rect.left > 0:
 			self.center -= self.ai_settings.ship_speed_factor
+		# elif self.moving_up and self.rect.top > 0:
+		# 	self.bottom -= self.ai_settings.ship_speed_factor
+		# elif self.moving_down and self.rect.bottom < self.screen_rect.bottom:
+		# 	self.bottom += self.ai_settings.ship_speed_factor
 
 		# Update rect object from self.center.
 		self.rect.centerx = self.center
