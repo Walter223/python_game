@@ -15,7 +15,7 @@ def check_keydown_events(event, ai_settings, screen, ship, bullets):
 		ship.moving_up = True
 	elif event.key in (pygame.K_DOWN, pygame.K_s):
 		ship.moving_down = True
-	elif event.key == pygame.K_q:
+	elif event.key in (pygame.K_q, K_ESCAPE):
 		sys.exit()
 		
 def fire_bullet(ai_settings, screen, ship, bullets):
@@ -48,8 +48,9 @@ def check_keyup_events(event,ship):
 		ship.moving_up = False
 	elif event.key in (pygame.K_DOWN, pygame.K_s):
 		ship.moving_down = False
+	
 
-def check_events(ai_settings, screen, ship, bullets):
+def check_events(ai_settings, screen, ship, aliens, bullets):
 	"""Respond to keypresses and mouse events."""
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
