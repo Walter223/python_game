@@ -16,4 +16,11 @@ class Settings():
 		self.bullet_width = 3
 		self.bullet_height = 15
 		self.bullet_color = 100,255,100
-		self.bullets_allowed = 5
+		self.bullets_allowed = 10
+
+		# # Super Bullets
+		# self.super_bullet_speed_factor = 10
+		# self.super_bullet_width = 20
+		# self.super_bullet_height = 20
+		# self.super_bullet_color = 255,50,50
+		# self.super_bullets_allowed = 2
